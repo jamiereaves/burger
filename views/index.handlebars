@@ -1,36 +1,113 @@
-<h1> BURGERS! </h1>
+<header>
+    The Encyclo-pun-ia Burgertannica
+</header>
+   
+<div class="container"></div>
+    <div class="row" id="contentHolder">
+    <div class="col-md-4" id="leftSide">
+        <div class="row">
+            <div class="column-12" id="listControl">
+                <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="uneatenBurger" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Burgers I Must Try</a>
+                <a class="list-group-item list-group-item-action" id="lovedBurger" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Burgers I Have Loved</a>
+                <a class="list-group-item list-group-item-action" id="unlovedBurger" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Burgers I Have Loathed</a>
+                </div>
+            </div>
+        </div>
 
-<h2>Burgers I Will Eat</h2>
+        <div class="row" id="formInput1">
+            <div class="column-12" id="formControl">
+                <div class="card" id="addCard">
+                    <div class="card-header text-center">
+                        Add a Burger to the List!
+                    </div>
+                    
+                    <div class="card-body text-left">
+                        <form class="create-form">
 
-<ul>
-    {{#each burgers}}
-        {{#unless eaten}}
-            <li>
-                {{burger_name}}
-                <button class="eatMe" data-id="{{id}}">Ate It!</button>
-            </li>
-        {{/unless}}
-    {{/each}}
+                            <div class="form-group">
+                                <label for="ca"> Burger Name:</label>
+                                <input type="text" id = "ca" name="name">
+                            </div>
 
-</ul>
+                            <button id="addButton" type="submit">Add It!</button>
+                        </form>
 
-<h2>Burgers I Have Eaten</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<ul>
-    {{#each burgers}}
-        {{#if eaten}}
-            <li>{{burger_name}}</li>
-        {{/if}}
-    {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-    <div class="form-group">
-        <label for="ca"> Burger Name:</label>
-        <input type="text" id = "ca" name="name">
     </div>
 
-    <button type="submit">Press to Add!</button>
-</form>
+
+    <div class="col-md-8">
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="uneatenBurger">
+            
+                {{#each burgers}}
+                        {{#unless eaten}}
+                            <div class="rightSide">
+                                <li>
+                                    {{burger_name}}
+                                <button class="lovedIt" data-id="{{id}}">Loved It!</button>
+                                <button class="loathedIt" data-id="{{id}}">Loathed It!</button>
+                                </li>
+                            </div>
+                        {{/unless}}
+                {{/each}}
+
+        </div>
+        
+        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="lovedBurger">
+            <ul>
+                {{#each burgers}}
+                    {{#if eaten}}
+                        {{#if loved}}
+                                <li>{{burger_name}}</li>
+                        {{/if}}
+                    {{/if}}
+                {{/each}}
+            </ul>
+
+        </div>
+
+        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="unlovedBurger">
+            <ul>
+                {{#each burgers}}
+                    {{#if eaten}}
+                        {{#unless loved}}
+                            <li>{{burger_name}}</li>
+                        {{/unless}}
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+
+    </div>
+    </div>
+    </div>
+</div>
+
+<div class="row" id="formInput2">
+            <div class="column-12" id="formControl">
+                <div class="card" id="addCard">
+                    <div class="card-header text-center">
+                        Add a Burger to the List!
+                    </div>
+                    
+                    <div class="card-body text-left">
+                        <form class="create-form">
+
+                            <div class="form-group">
+                                <label for="ca"> Burger Name:</label>
+                                <input type="text" id = "ca" name="name">
+                            </div>
+
+                            <button id="addButton" type="submit">Add It!</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>

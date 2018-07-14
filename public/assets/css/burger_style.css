@@ -1,20 +1,155 @@
 li {
-    padding: 5px;
-    margin: 5px;
-    background: #faebd7;
+    padding: 10px 5px 5px 20px;
+    margin: 5px 5px 5px 0;
+    color: #FE8B01;
+    background: #C8593C;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 10px;
+    border-color: rgb(7, 61, 7);
+    border-width: 3px;
+    border-style: solid;
+    max-width:795px;
   }
-  
-  .label {
+
+
+.rightSide::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.label {
+font-weight: bold;
+}
+
+body {
+    background-image: url("../images/backgroundBurger.png");
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center; 
+    background-position-y: 200px;
+    background-color: #BBD66C;
+}
+
+header {
+    background-color: rgb(7, 61, 7);
+    color: #C8593C;
+    font-size: 48px;
+    font-weight: bolder;
+    height:150px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 40px 2px 0 2px;
+    width: 100%;
+    line-height: 1.2em;
+    
+}
+
+#leftSide{
+    width: 100%;
+    margin: auto;
+}
+
+#listControl{
+    width: 90%;
+    margin: auto auto 20px auto;
+}
+
+#formControl{
+width: 90%;
+margin: 20px auto auto;
+}
+
+.lovedIt{
+    background-color: rgb(7, 61, 7);
+    color: #C8593C;
+    border-radius: 10px;
+    border-color: #FE8B01;
+    min-width: 78px;
+    max-height: 29px;
+    margin: auto 10px auto 40px;
+}
+
+.loathedIt{
+    background-color: #FE8B01;
+    color: #AD0600;
+    border-color: rgb(7, 61, 7);
+    border-radius: 10px;
+    min-width: 94px;
+    max-height: 29px;
+    margin: auto 20px auto 10px;
+}
+
+.card-header{
+    background-color: rgb(7, 61, 7);
+    color: #C8593C;
     font-weight: bold;
-  }
-  
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
-  }
-  
-  .form-group {
-    margin-bottom: 5px;
-  }
-  
+    border-radius: 5px 5px 0 0;
+}
+
+.card-body{
+    background-color: #FE8B01;
+    color: #AD0600;
+    border-radius: 0 0 5px 5px;
+}
+
+#addButton {
+    background-color: #BBD66C;
+    color: #AD0600;
+    border-radius: 10px;
+    border-color: rgb(7, 61, 7);
+}
+
+#addCard {
+    border-radius: 5px;
+    border-color: rgb(7, 61, 7);  
+}
+
+.list-group-item {
+    background-color: #FE8B01;
+    color: #AD0600;
+    border-color: rgb(7, 61, 7);
+}
+
+#contentHolder {
+    width: 95%;
+    margin: 40px auto 0 auto;
+}
+
+#formInput1 {
+    display: inherit;
+}
+
+#formInput2 {
+    display: none;
+}
+
+/*css for large screen widths*/
+@media only screen and (max-width:767px) {
+   
+    header {
+        padding: 20px 0 0 0;
+    }
+    
+    #formInput1 {
+        display: none;
+    }
+
+    #formInput2 {
+        display: inherit;
+        width:100%;
+        margin: auto auto 20px auto;
+    }
+
+    body {
+        background-size: 90%
+    }
+
+    #listControl {
+        width: 94%;
+    }
+}

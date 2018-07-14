@@ -31,7 +31,8 @@ router.put("/api/burgers/:id", function(req, res) {
     console.log("condition", condition);
 
     burger.updateOne({
-        eaten: req.body.eaten
+        eaten: req.body.eaten,
+        loved: req.body.loved
     }, condition, function(result) {
         //if no rows are changed an invalid id was input => 404 error
         if (result.changedRows == 0) {

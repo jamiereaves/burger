@@ -22,21 +22,43 @@ $(function() {
         }
         );
     });
-    //click event for the "ate it" button
-    $(".eatMe").on("click", function(event) {
+    //click event for the "loved it button"
+    $(".lovedIt").on("click", function(event) {
         var id = $(this).data("id");
-        //object that holds boolean value for eaten burger
-        var burgerAccomplished = {
-                eaten: 1
+        //object that holds boolean value for loved burger
+        var burgerOpinion = {
+                eaten: 1,
+                loved: 1
         };
 
         // Send the PUT request.
         $.ajax("/api/burgers/" + id, {
         type: "PUT",
-        data: burgerAccomplished
+        data: burgerOpinion
         }).then(
         function() {
-            console.log("the burger was eaten");
+            console.log("the burger was loved");
+            // Reload the page to get the updated list
+            location.reload();
+        }
+        );
+    });
+    //click event for the "loathed it button"
+    $(".loathedIt").on("click", function(event) {
+        var id = $(this).data("id");
+        //object that holds boolean value for loved burger
+        var burgerOpinion = {
+                eaten: 1,
+                loved: 0
+        };
+
+        // Send the PUT request.
+        $.ajax("/api/burgers/" + id, {
+        type: "PUT",
+        data: burgerOpinion
+        }).then(
+        function() {
+            console.log("the burger was loathed");
             // Reload the page to get the updated list
             location.reload();
         }

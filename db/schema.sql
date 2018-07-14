@@ -8,13 +8,13 @@ USE burgers_db;
 burger has been eaten or not(boolean), and whether the burger was loved/loathed (boolean)
  as fields. the loved/loathed boolean value is for a future feature that may not be 
  completed upon submission*/
- CREATE TABLE burgers
- (
-     id int NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS burgers;
+CREATE TABLE burgers (
+     id INT AUTO_INCREMENT NOT NULL,
      burger_name varchar(300) NOT NULL,
      eaten BOOLEAN DEFAULT false,
-     loved BOOLEAN,
-     burger_img_link varchar (300),
-
+     loved BOOLEAN DEFAULT false,
+     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
      PRIMARY KEY (id)
  );
+
