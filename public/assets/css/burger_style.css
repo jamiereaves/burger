@@ -128,7 +128,7 @@ margin: 20px auto auto;
     display: none;
 }
 
-/*css for large screen widths*/
+/*css for medium and large screen widths*/
 @media only screen and (max-width:767px) {
    
     header {
@@ -151,5 +151,32 @@ margin: 20px auto auto;
 
     #listControl {
         width: 94%;
+    }
+}
+
+/*css for small screen widths*/
+@media only screen and (max-width:574px) {
+    li {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 5px 5px;
+    }
+    .lovedIt{
+        min-width: 120px;
+        max-width:121px;
+        margin: 5px auto 5px auto;
+    }
+    .loathedIt{
+        min-width: 120px;
+        max-width:121px;
+        margin: 5px auto 5px auto;
+    }
+}
+
+/*css for very small screen widths*/
+@media only screen and (max-width:396px) {
+    header {
+        height: 200px;
+        padding: 15px 0 0 0;
     }
 }
